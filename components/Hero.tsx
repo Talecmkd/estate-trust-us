@@ -2,6 +2,39 @@
 
 import { CheckCircle, Star, Building, Lock, Home, Key, MapPin, Landmark, Briefcase, LucideIcon } from 'lucide-react';
 
+const partnerCompanies = {
+  lisbonLuxury: {
+    name: "Lisbon Luxury",
+    type: "Real Estate Agency",
+    testimonial: "The verification seal gave us instant credibility with clients."
+  },
+  primeEstates: {
+    name: "Prime Estates",
+    type: "Property Management",
+    testimonial: "Our verified status helped us close deals 30% faster."
+  },
+  urbanKey: {
+    name: "Urban Key",
+    type: "Commercial RE",
+    testimonial: "Clients trust us more knowing we're independently verified."
+  },
+  coastalProperties: {
+    name: "Coastal Properties",
+    type: "Luxury Real Estate",
+    testimonial: "The badge is a game-changer for our online presence."
+  },
+  metroRealty: {
+    name: "Metro Realty",
+    type: "Residential Sales",
+    testimonial: "We've seen a significant increase in qualified leads since getting verified."
+  },
+  heritageHomes: {
+    name: "Heritage Homes",
+    type: "Historic Properties",
+    testimonial: "Verification sets us apart in a competitive market."
+  }
+};
+
 const getCompanyIcon = (name: string, type: string): LucideIcon => {
   const nameLower = name.toLowerCase();
   const typeLower = type.toLowerCase();
@@ -18,7 +51,7 @@ const getCompanyIcon = (name: string, type: string): LucideIcon => {
   return Building;
 };
 
-const PartnerCard = ({ name, type }: { name: string; type: string }) => {
+const PartnerCard = ({ name, type, testimonial }: { name: string; type: string; testimonial: string }) => {
   const Icon = getCompanyIcon(name, type);
   const colors = [
     'bg-blue-100 text-blue-600',
@@ -45,7 +78,7 @@ const PartnerCard = ({ name, type }: { name: string; type: string }) => {
       <div className="flex text-yellow-400 text-xs mb-1 gap-0.5">
         {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 fill-current" />)}
       </div>
-      <p className="text-slate-600 text-xs line-clamp-2">&quot;The verification seal gave us instant credibility with clients.&quot;</p>
+      <p className="text-slate-600 text-xs line-clamp-2">&quot;{testimonial}&quot;</p>
     </div>
   );
 };
@@ -101,18 +134,18 @@ export default function Hero() {
         {/* Marquee */}
         <div className="w-full max-w-7xl mx-auto py-4 overflow-hidden relative mask-edges">
           <div className="flex gap-8 w-max animate-scroll hover:[animation-play-state:paused]">
-            <PartnerCard name="Lisbon Luxury" type="Real Estate Agency" />
-            <PartnerCard name="Prime Estates" type="Property Management" />
-            <PartnerCard name="Urban Key" type="Commercial RE" />
-            <PartnerCard name="Coastal Properties" type="Luxury Real Estate" />
-            <PartnerCard name="Metro Realty" type="Residential Sales" />
-            <PartnerCard name="Heritage Homes" type="Historic Properties" />
-            <PartnerCard name="Lisbon Luxury" type="Real Estate Agency" />
-            <PartnerCard name="Prime Estates" type="Property Management" />
-            <PartnerCard name="Urban Key" type="Commercial RE" />
-            <PartnerCard name="Coastal Properties" type="Luxury Real Estate" />
-            <PartnerCard name="Metro Realty" type="Residential Sales" />
-            <PartnerCard name="Heritage Homes" type="Historic Properties" />
+            <PartnerCard name={partnerCompanies.lisbonLuxury.name} type={partnerCompanies.lisbonLuxury.type} testimonial={partnerCompanies.lisbonLuxury.testimonial} />
+            <PartnerCard name={partnerCompanies.primeEstates.name} type={partnerCompanies.primeEstates.type} testimonial={partnerCompanies.primeEstates.testimonial} />
+            <PartnerCard name={partnerCompanies.urbanKey.name} type={partnerCompanies.urbanKey.type} testimonial={partnerCompanies.urbanKey.testimonial} />
+            <PartnerCard name={partnerCompanies.coastalProperties.name} type={partnerCompanies.coastalProperties.type} testimonial={partnerCompanies.coastalProperties.testimonial} />
+            <PartnerCard name={partnerCompanies.metroRealty.name} type={partnerCompanies.metroRealty.type} testimonial={partnerCompanies.metroRealty.testimonial} />
+            <PartnerCard name={partnerCompanies.heritageHomes.name} type={partnerCompanies.heritageHomes.type} testimonial={partnerCompanies.heritageHomes.testimonial} />
+            <PartnerCard name={partnerCompanies.lisbonLuxury.name} type={partnerCompanies.lisbonLuxury.type} testimonial={partnerCompanies.lisbonLuxury.testimonial} />
+            <PartnerCard name={partnerCompanies.primeEstates.name} type={partnerCompanies.primeEstates.type} testimonial={partnerCompanies.primeEstates.testimonial} />
+            <PartnerCard name={partnerCompanies.urbanKey.name} type={partnerCompanies.urbanKey.type} testimonial={partnerCompanies.urbanKey.testimonial} />
+            <PartnerCard name={partnerCompanies.coastalProperties.name} type={partnerCompanies.coastalProperties.type} testimonial={partnerCompanies.coastalProperties.testimonial} />
+            <PartnerCard name={partnerCompanies.metroRealty.name} type={partnerCompanies.metroRealty.type} testimonial={partnerCompanies.metroRealty.testimonial} />
+            <PartnerCard name={partnerCompanies.heritageHomes.name} type={partnerCompanies.heritageHomes.type} testimonial={partnerCompanies.heritageHomes.testimonial} />
           </div>
         </div>
       </div>
