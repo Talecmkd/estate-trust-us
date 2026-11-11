@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Twitter, Linkedin, Facebook } from 'lucide-react';
+import { Phone, MapPin, Twitter, Linkedin, Facebook } from 'lucide-react';
 import Image from 'next/image';
 
 interface FooterProps {
@@ -68,12 +68,6 @@ export default function Footer({ onLinkClick }: FooterProps) {
           <div>
             <h4 className="font-bold text-white mb-4">Contact</h4>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li className="flex items-start gap-2">
-                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <a href=" kelloggfairbank@gmail.com " className="hover:text-brand transition">
-                kelloggfairbank@gmail.com 
-                </a>
-              </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <a href="https://wa.me/31615448100" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition">
